@@ -1,0 +1,36 @@
+name: BownataParty
+main: org.itzabood69.bowparty.BownataParty
+version: 1.5
+api-version: 1.12
+authors: [ItzAbood69]
+description: A fun bow party minigame plugin with custom rewards and bossbars
+
+commands:
+  bownata:
+    description: Main command for BownataParty
+    usage: |
+      /bownata spawn - Spawn a Bownata
+      /bownata reload - Reload config
+      /bownata list - List active Bownatas
+    permission: bownata.use
+    permission-message: "&cYou don't have permission!"
+    aliases: [bp, bowparty]
+
+permissions:
+  bownata.admin:
+    description: Gives full access to all commands
+    default: op
+    children:
+      bownata.*: true
+  bownata.use:
+    description: Basic permission to use commands
+    default: true
+  bownata.spawn:
+    description: Permission to spawn Bownatas
+    default: true
+  bownata.hit:
+    description: Permission to hit Bownatas
+    default: true
+  bownata.bypass.cooldown:
+    description: Bypass spawn cooldown
+    default: op

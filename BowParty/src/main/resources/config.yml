@@ -1,0 +1,158 @@
+#Made By izabood69
+# Bowmate Party Configuration v2.0
+
+# General Settings
+cooldown: 60  # Seconds between spawns
+
+# Mob Settings
+mob-type: SHEEP
+display-name: "&e&lBowmate - Hit with Arrows!"
+glow-effect: true
+mob-speed: 0.25
+
+# Game Mechanics
+required-hits: 15
+regen:
+  amount: 1  # Hits regenerated per minute
+  cooldown: 15  # Seconds after hit before regen starts
+
+# Bossbar Settings
+bossbar-title: "&eBowmate"
+bossbar-color: YELLOW  # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+global-bossbar: false  # Show to all players or only nearby
+
+# Movement Settings
+movement:
+  enabled: true
+  speed: 0.35
+  jump-chance: 0.25
+  jump-power: 0.65
+  interval: 15  # Ticks between movement updates
+
+# Hit Effects
+on-hit:
+  big-jump:
+    chance: 0.10  # 10% chance
+    power: 1.5
+  rare:
+    chance: 1.0  # 1% chance (modified by luck)
+    command: "give %player% golden_apple 1"
+
+# Luck System
+luck:
+  item: GOLD_NUGGET
+  item-value: 5  # Luck points added per item use
+  multiplier-per-point: 0.05  # 5% increase per luck point
+
+# Final Rewards (when destroyed)
+final-reward:
+  xp: 30
+  items:
+    - DIAMOND
+    - EMERALD
+    - GOLD_INGOT
+  commands:
+    - "give %player% diamond 3"
+  fireworks: true
+  message: "&e🎉 %player% broke the Bowmate!"
+
+# Hit Rewards (per hit)
+hit-rewards:
+  # Format:
+  # reward-[number]:
+  #   chance: 0.0-1.0
+  #   type: item|cmd
+  #   value: MaterialName or command
+
+  # Example item reward (25% chance to drop a diamond)
+  reward-1:
+    chance: 0.25
+    type: item
+    value: DIAMOND
+
+  # Example command reward (10% chance to give 1 diamond)
+  reward-2:
+    chance: 0.10
+    type: cmd
+    value: "give %player% diamond 1"
+
+# Messages
+messages:
+  cooldown: "&cPlease wait %time% seconds!"
+  no-permission: "&cYou don't have permission!"
+  spawn-success: "&aBowmate spawned!"
+  clone-success: "&aBowmate cloned!"
+  remove-success: "&aBowmate removed!"
+  teleport-success: "&aTeleported to Bowmate!"
+
+# =============================================
+# All Available Commands
+# =============================================
+commands:
+  - "/bowmate spawn - Spawn a Bowmate"
+  - "/bowmate reload - Reload configuration"
+  - "/bowmate luck <player> <amount> - Set player luck"
+  - "/bowmate clone - Clone nearby Bowmate"
+  - "/bowmate setmob <type> - Set default mob type"
+  - "/bowmate sethits <number> - Set required hits"
+  - "/bowmate setcooldown <seconds> - Set spawn cooldown"
+  - "/bowmate setbossbar <title> - Set bossbar title"
+  - "/bowmate setdisplayname <name> - Set display name"
+  - "/bowmate seteffects <chance> <power> - Configure hit effects"
+  - "/bowmate setrewards <xp> <items> - Configure rewards"
+  - "/bowmate setmovement <speed> <jump> - Configure movement"
+  - "/bowmate list - List active Bowmates"
+  - "/bowmate remove <id> - Remove a Bowmate"
+  - "/bowmate tp <id> - Teleport to Bowmate"
+  - "/bowmate giveitem <player> - Give luck item"
+  - "/bowmate resetluck <player> - Reset player luck"
+  - "/bowmate top - Show leaderboard"
+  - "/bowmate info - Show plugin info"
+  - "/bowmate regen <amount> - Set health regen"
+  - "/bowmate setcolor <color> - Set bossbar color"
+  - "/bowmate setglow <true/false> - Toggle glow effect"
+  - "/bowmate setad <message> - Set ad message"
+  - "/bowmate setglobal <true/false> - Toggle global bossbar"
+  - "/bowmate sethitrewards <chance> <item|cmd> <value> - Configure hit rewards"
+  - "/bowmate help - Show help menu"
+
+# =============================================
+# All Available Permissions
+# =============================================
+permissions:
+  # Admin permissions
+  - "bowmate.admin - Access to all commands"
+  - "bowmate.bypass.cooldown - Bypass spawn cooldown"
+
+  # Basic permissions
+  - "bowmate.spawn - Spawn Bowmates"
+  - "bowmate.hit - Hit Bowmates"
+  - "bowmate.luck.use - Use luck items"
+
+  # Command categories
+  - "bowmate.command.spawn - /bowmate spawn"
+  - "bowmate.command.reload - /bowmate reload"
+  - "bowmate.command.luck - /bowmate luck"
+  - "bowmate.command.clone - /bowmate clone"
+  - "bowmate.command.setmob - /bowmate setmob"
+  - "bowmate.command.sethits - /bowmate sethits"
+  - "bowmate.command.setcooldown - /bowmate setcooldown"
+  - "bowmate.command.setbossbar - /bowmate setbossbar"
+  - "bowmate.command.setdisplayname - /bowmate setdisplayname"
+  - "bowmate.command.seteffects - /bowmate seteffects"
+  - "bowmate.command.setrewards - /bowmate setrewards"
+  - "bowmate.command.setmovement - /bowmate setmovement"
+  - "bowmate.command.list - /bowmate list"
+  - "bowmate.command.remove - /bowmate remove"
+  - "bowmate.command.tp - /bowmate tp"
+  - "bowmate.command.giveitem - /bowmate giveitem"
+  - "bowmate.command.resetluck - /bowmate resetluck"
+  - "bowmate.command.top - /bowmate top"
+  - "bowmate.command.info - /bowmate info"
+  - "bowmate.command.regen - /bowmate regen"
+  - "bowmate.command.setcolor - /bowmate setcolor"
+  - "bowmate.command.setglow - /bowmate setglow"
+  - "bowmate.command.setad - /bowmate setad"
+  - "bowmate.command.setglobal - /bowmate setglobal"
+  - "bowmate.command.sethitrewards - /bowmate sethitrewards"
+  - "bowmate.command.help - /bowmate help"
